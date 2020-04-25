@@ -19,31 +19,6 @@ spec:
         - name: docker-java-web-app
           containerPort: 8080  
 ---
-apiVersion: apps/v2
-kind: Deployment
-metadata:
-  creationTimestamp: null
-  labels:
-    app: docker-java-web-app
-  name: docker-java-web-app
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: docker-java-web-app
-  strategy: {}
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: docker-java-web-app
-    spec:
-      containers:
-      - image: slave-node1.md/docker-java-web-app:v1
-        name: docker-java-web-app
-        resources: {}
-status: {}
----
 apiVersion: v1
 kind: Service
 metadata:
