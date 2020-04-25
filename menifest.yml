@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    name: docker-java-web-app
+  name: docker-java-web-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: docker-java-web-app
+    spec:
+      containers:
+      - image: slave-node1.md/docker-java-web-app:v1
+        name: docker-java-web-app
+        ports:
+        - name: docker-java-web-app
+          containerPort: 8080  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: docker-java-web-app
+  name: docker-java-web-app
+spec:
+  ports:
+  - name: "8080"
+    nodePort: 30306
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: docker-java-web-app
+  type: NodePort
+status:
+  loadBalancer: {}
