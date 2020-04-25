@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        name: docker-java-web-app
+        name: java-web-app
     spec:
       containers:
       - image: slave-node1.md/neerajbharti2007/docker-java-web-app
