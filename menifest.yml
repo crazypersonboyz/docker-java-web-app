@@ -16,7 +16,7 @@ spec:
       - image: slave-node1.md/neerajbharti2007/docker-java-web-app
         name: docker-java-web-app
         ports:
-        - name: docker-java-web-app
+        - name: java-web-app
           containerPort: 8080  
 ---
 # Node Port Service
