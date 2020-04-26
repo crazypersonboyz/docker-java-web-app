@@ -17,7 +17,7 @@ spec:
         app: docker-java-web-app
     spec:
       containers:
-      - image: slave-node1.md/docker-java-web-app:v1
+      - image: master-node:5000/docker-java-web-app:v1
         name: docker-java-web-app
         resources: {}
 status: {}
